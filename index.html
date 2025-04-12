@@ -1,67 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Exploring the Impact of Cost on Higher Education</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-    }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0.2em;
-    }
-    h2 {
-      font-size: 1.4em;
-      color: #555;
-    }
-    #chart {
-      margin-top: 40px;
-    }
-  </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exploring the Impact of Cost on Higher Education</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 20px;
+        line-height: 1.6;
+      }
+      h1 {
+        font-size: 2em;
+        margin-bottom: 0.2em;
+      }
+      h2 {
+        font-size: 1.4em;
+        color: #555;
+      }
+      #tuition-line-chart,
+      #debt-bar-chart,
+      #average-debt-chart,
+      #cost-of-living-map,
+      #college-enrollment-chart {
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Exploring the Impact of Cost on Higher Education</h1>
+    <h2>By Sukhraj Singh</h2>
 
-  <h1>Exploring the Impact of Cost on Higher Education</h1>
-  <h2>By Sukhraj Singh</h2>
+    <p>
+      This project explores how the rising cost of higher education in the
+      United States is affecting students and society. Using interactive data
+      visualizations, we examine tuition trends, enrollment shifts,
+      post-graduation debt, and the economic return on different degrees. The
+      goal is to tell a data-driven story about the growing burden of college
+      costs and the limited financial outcomes for many graduates.
+    </p>
 
-  <p>
-    This project explores how the rising cost of higher education in the United States is affecting students and society. 
-    Using interactive data visualizations, we examine tuition trends, enrollment shifts, post-graduation debt, and 
-    the economic return on different degrees. The goal is to tell a data-driven story about the growing burden of college 
-    costs and the limited financial outcomes for many graduates.
-  </p>
+    <p>
+      As costs continue to climb, students are being forced to weigh the value
+      of education against long-term debt and underwhelming job prospects. This
+      site helps break down those numbers in a visual, interactive way.
+    </p>
 
-  <p>
-    As costs continue to climb, students are being forced to weigh the value of education against long-term debt 
-    and underwhelming job prospects. This site helps break down those numbers in a visual, interactive way.
-  </p>
+    <!-- Tuition Growth Over Time (D3 Line Chart) -->
+    <h2>Tuition Growth Over Time (All Institutions)</h2>
+    <div id="tuition-line-chart"></div>
 
-  <div id="chart">
-    <iframe title="Tuition Rate Over The Years" aria-label="Interactive line chart"
-      id="datawrapper-chart-H6Usy"
-      src="https://datawrapper.dwcdn.net/H6Usy/1/"
-      scrolling="no" frameborder="0"
-      style="width: 0; min-width: 100% !important; border: none;"
-      height="394" data-external="1">
-    </iframe>
+    <!-- Undergraduate vs Graduate Debt Over Time (D3 Bar Chart) -->
+    <h2>Student Debt Over Time (Undergraduate vs Graduate)</h2>
+    <div id="debt-bar-chart"></div>
+
+    <!-- Average American Debt Donut Chart -->
+    <h2>Breakdown of Average American Debt</h2>
+    <div id="average-debt-chart">
+      <iframe
+        title="[ Average American Debt ]"
+        aria-label="Donut Chart"
+        id="datawrapper-chart-g4BuH"
+        src="https://datawrapper.dwcdn.net/g4BuH/1/"
+        scrolling="no"
+        frameborder="0"
+        style="width: 0; min-width: 100% !important; border: none"
+        height="566"
+        data-external="1"
+      ></iframe>
+    </div>
+
+    <!-- Cost of Living by State Map -->
+    <h2>Cost of Living Index by State (2025)</h2>
+    <div id="cost-of-living-map">
+      <iframe
+        title="[Cost of Living Index by State 2025 ]"
+        aria-label="Map"
+        id="datawrapper-chart-FiCbz"
+        src="https://datawrapper.dwcdn.net/FiCbz/1/"
+        scrolling="no"
+        frameborder="0"
+        style="width: 0; min-width: 100% !important; border: none"
+        height="483"
+        data-external="1"
+      ></iframe>
+    </div>
+
+    <!-- College Enrollment Over Time (Area Chart) -->
+    <h2>College Enrollment Trends Over Time</h2>
+    <div id="college-enrollment-chart">
+      <iframe
+        title="College Enrollment"
+        aria-label="Interactive area chart"
+        id="datawrapper-chart-aO8GM"
+        src="https://datawrapper.dwcdn.net/aO8GM/1/"
+        scrolling="no"
+        frameborder="0"
+        style="width: 0; min-width: 100% !important; border: none"
+        height="395"
+        data-external="1"
+      ></iframe>
+    </div>
+
+    <!-- Shared script to resize all Datawrapper embeds -->
     <script type="text/javascript">
-      window.addEventListener("message", function(event) {
+      window.addEventListener("message", function (event) {
         if (event.data["datawrapper-height"]) {
           for (var chartId in event.data["datawrapper-height"]) {
-            var iframe = document.getElementById("datawrapper-chart-H6Usy");
+            var iframe = document.getElementById(
+              "datawrapper-chart-" + chartId
+            );
             if (iframe) {
-              iframe.style.height = event.data["datawrapper-height"][chartId] + "px";
+              iframe.style.height =
+                event.data["datawrapper-height"][chartId] + "px";
             }
           }
         }
       });
     </script>
-  </div>
 
-</body>
+    <!-- JS Dependencies -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="linechart.js"></script>
+    <script src="barchart.js"></script>
+  </body>
 </html>
