@@ -41,22 +41,35 @@
       costs and the limited financial outcomes for many graduates.
     </p>
 
-    <p>
-      As costs continue to climb, students are being forced to weigh the value
-      of education against long-term debt and underwhelming job prospects. This
-      site helps break down those numbers in a visual, interactive way.
-    </p>
-
     <!-- Tuition Growth Over Time (D3 Line Chart) -->
     <h2>Tuition Growth Over Time (All Institutions)</h2>
+    <p>
+      Over the past six decades, the cost of attending college in the United
+      States has increased dramatically. This chart shows a long-term view of
+      <strong>tuition growth</strong>, revealing a consistent rise that
+      outpaces inflation and wage growth. This rise is the root cause of much
+      of the downstream pressure now seen across society.
+    </p>
     <div id="tuition-line-chart"></div>
 
     <!-- Undergraduate vs Graduate Debt Over Time (D3 Bar Chart) -->
     <h2>Student Debt Over Time (Undergraduate vs Graduate)</h2>
+    <p>
+      With costs rising, students have turned to borrowing. The chart below
+      shows the growth of <strong>undergraduate and graduate student debt</strong>
+      over the past two decades. Graduate debt is rising especially fast, driven
+      by expensive programs like law, business, and medicine.
+    </p>
     <div id="debt-bar-chart"></div>
 
     <!-- Average American Debt Donut Chart -->
     <h2>Breakdown of Average American Debt</h2>
+    <p>
+      Student loans are now a major part of household debt. This donut chart
+      shows how <strong>student debt compares</strong> to other forms like
+      mortgages, auto loans, and credit card balances — pushing the average
+      American’s total debt above $100,000.
+    </p>
     <div id="average-debt-chart">
       <iframe
         title="[ Average American Debt ]"
@@ -73,6 +86,13 @@
 
     <!-- Cost of Living by State Map -->
     <h2>Cost of Living Index by State (2025)</h2>
+    <p>
+      Debt hits harder depending on where you live. This map shows the
+      <strong>cost of living index by state</strong> for 2025. In expensive
+      states like California or New York, even high post-grad salaries don’t go
+      as far, while lower-cost states may offer more room — but fewer economic
+      opportunities.
+    </p>
     <div id="cost-of-living-map">
       <iframe
         title="[Cost of Living Index by State 2025 ]"
@@ -89,6 +109,12 @@
 
     <!-- College Enrollment Over Time (Area Chart) -->
     <h2>College Enrollment Trends Over Time</h2>
+    <p>
+      The effect of rising tuition is now starting to show up in
+      <strong>enrollment rates</strong>. For the first time in decades, college
+      enrollment is falling. This drop reflects how many are reconsidering
+      whether the cost of college is worth it at all.
+    </p>
     <div id="college-enrollment-chart">
       <iframe
         title="College Enrollment"
@@ -108,9 +134,7 @@
       window.addEventListener("message", function (event) {
         if (event.data["datawrapper-height"]) {
           for (var chartId in event.data["datawrapper-height"]) {
-            var iframe = document.getElementById(
-              "datawrapper-chart-" + chartId
-            );
+            var iframe = document.getElementById("datawrapper-chart-" + chartId);
             if (iframe) {
               iframe.style.height =
                 event.data["datawrapper-height"][chartId] + "px";
