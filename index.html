@@ -21,10 +21,20 @@
       }
       #tuition-line-chart,
       #debt-bar-chart,
-      #average-debt-chart,
+      #american-debt-donut,
       #cost-of-living-map,
-      #college-enrollment-chart {
+      #college-line-chart {
         margin-top: 40px;
+      }
+      .tooltip {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        background: #fff;
+        border: 1px solid #ccc;
+        padding: 8px;
+        position: absolute;
+        pointer-events: none;
+        opacity: 0;
       }
     </style>
   </head>
@@ -41,28 +51,29 @@
       costs and the limited financial outcomes for many graduates.
     </p>
 
-    <!-- Tuition Growth Over Time (D3 Line Chart) -->
+    <!-- Tuition Growth Over Time -->
     <h2>Tuition Growth Over Time (All Institutions)</h2>
     <p>
       Over the past six decades, the cost of attending college in the United
       States has increased dramatically. This chart shows a long-term view of
-      <strong>tuition growth</strong>, revealing a consistent rise that
-      outpaces inflation and wage growth. This rise is the root cause of much
-      of the downstream pressure now seen across society.
+      <strong>tuition growth</strong>, revealing a consistent rise that outpaces
+      inflation and wage growth. This rise is the root cause of much of the
+      downstream pressure now seen across society.
     </p>
     <div id="tuition-line-chart"></div>
 
-    <!-- Undergraduate vs Graduate Debt Over Time (D3 Bar Chart) -->
+    <!-- Student Debt Bar Chart -->
     <h2>Student Debt Over Time (Undergraduate vs Graduate)</h2>
     <p>
       With costs rising, students have turned to borrowing. The chart below
-      shows the growth of <strong>undergraduate and graduate student debt</strong>
+      shows the growth of
+      <strong>undergraduate and graduate student debt</strong>
       over the past two decades. Graduate debt is rising especially fast, driven
       by expensive programs like law, business, and medicine.
     </p>
     <div id="debt-bar-chart"></div>
 
-    <!-- Average American Debt Donut Chart -->
+    <!-- American Debt Donut -->
     <h2>Breakdown of Average American Debt</h2>
     <p>
       Student loans are now a major part of household debt. This donut chart
@@ -70,21 +81,9 @@
       mortgages, auto loans, and credit card balances — pushing the average
       American’s total debt above $100,000.
     </p>
-    <div id="average-debt-chart">
-      <iframe
-        title="[ Average American Debt ]"
-        aria-label="Donut Chart"
-        id="datawrapper-chart-g4BuH"
-        src="https://datawrapper.dwcdn.net/g4BuH/1/"
-        scrolling="no"
-        frameborder="0"
-        style="width: 0; min-width: 100% !important; border: none"
-        height="566"
-        data-external="1"
-      ></iframe>
-    </div>
+    <div id="american-debt-donut"></div>
 
-    <!-- Cost of Living by State Map -->
+    <!-- Cost of Living Map -->
     <h2>Cost of Living Index by State (2025)</h2>
     <p>
       Debt hits harder depending on where you live. This map shows the
@@ -93,21 +92,9 @@
       as far, while lower-cost states may offer more room — but fewer economic
       opportunities.
     </p>
-    <div id="cost-of-living-map">
-      <iframe
-        title="[Cost of Living Index by State 2025 ]"
-        aria-label="Map"
-        id="datawrapper-chart-FiCbz"
-        src="https://datawrapper.dwcdn.net/FiCbz/1/"
-        scrolling="no"
-        frameborder="0"
-        style="width: 0; min-width: 100% !important; border: none"
-        height="483"
-        data-external="1"
-      ></iframe>
-    </div>
+    <div id="cost-of-living-map"></div>
 
-    <!-- College Enrollment Over Time (Area Chart) -->
+    <!-- College Enrollment Chart (scroll animated) -->
     <h2>College Enrollment Trends Over Time</h2>
     <p>
       The effect of rising tuition is now starting to show up in
@@ -115,26 +102,16 @@
       enrollment is falling. This drop reflects how many are reconsidering
       whether the cost of college is worth it at all.
     </p>
-    <div id="college-enrollment-chart">
-      <iframe
-        title="College Enrollment"
-        aria-label="Interactive area chart"
-        id="datawrapper-chart-aO8GM"
-        src="https://datawrapper.dwcdn.net/aO8GM/1/"
-        scrolling="no"
-        frameborder="0"
-        style="width: 0; min-width: 100% !important; border: none"
-        height="395"
-        data-external="1"
-      ></iframe>
-    </div>
+    <div id="college-line-chart" class="chart-scroll-trigger"></div>
 
-    <!-- Shared script to resize all Datawrapper embeds -->
+    <!-- Shared script to resize Datawrapper embeds (if any remain) -->
     <script type="text/javascript">
       window.addEventListener("message", function (event) {
         if (event.data["datawrapper-height"]) {
           for (var chartId in event.data["datawrapper-height"]) {
-            var iframe = document.getElementById("datawrapper-chart-" + chartId);
+            var iframe = document.getElementById(
+              "datawrapper-chart-" + chartId
+            );
             if (iframe) {
               iframe.style.height =
                 event.data["datawrapper-height"][chartId] + "px";
@@ -146,7 +123,11 @@
 
     <!-- JS Dependencies -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson-client@3"></script>
     <script src="linechart.js"></script>
     <script src="barchart.js"></script>
+    <script src="debtDonut.js"></script>
+    <script src="livingMap.js"></script>
+    <script src="enrollmentChart.js"></script>
   </body>
 </html>
