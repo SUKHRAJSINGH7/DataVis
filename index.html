@@ -3,41 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <title>Exploring the Impact of Cost on Higher Education</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 0 20px;
-        line-height: 1.6;
-      }
-      h1 {
-        font-size: 2em;
-        margin-bottom: 0.2em;
-      }
-      h2 {
-        font-size: 1.4em;
-        color: #555;
-      }
-      #tuition-line-chart,
-      #debt-bar-chart,
-      #american-debt-donut,
-      #cost-of-living-map,
-      #college-line-chart {
-        margin-top: 40px;
-      }
-      .tooltip {
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        background: #fff;
-        border: 1px solid #ccc;
-        padding: 8px;
-        position: absolute;
-        pointer-events: none;
-        opacity: 0;
-      }
-    </style>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <h1>Exploring the Impact of Cost on Higher Education</h1>
     <h2>By Sukhraj Singh</h2>
@@ -51,60 +27,107 @@
       costs and the limited financial outcomes for many graduates.
     </p>
 
-    <!-- Tuition Growth Over Time -->
-    <h2>Tuition Growth Over Time (All Institutions)</h2>
-    <p>
-      Over the past six decades, the cost of attending college in the United
-      States has increased dramatically. This chart shows a long-term view of
-      <strong>tuition growth</strong>, revealing a consistent rise that outpaces
-      inflation and wage growth. This rise is the root cause of much of the
-      downstream pressure now seen across society.
-    </p>
-    <div id="tuition-line-chart"></div>
+    <!-- Tuition Growth -->
+    <div class="chart-section">
+      <h2>Tuition Growth Over Time (All Institutions)</h2>
+      <p>
+        The cost of attending college in the United States has exploded over the
+        last 60 years. In the early 1960s, average annual tuition at all
+        institutions was just over $1,200. Today, that number has soared past
+        $27,000. This chart shows just how steep and unrelenting that climb has
+        been. While inflation plays a role, tuition has increased at a rate far
+        beyond general cost-of-living adjustments, outpacing wage growth,
+        housing, and even healthcare. For many families, affording college
+        without borrowing is no longer possible. What was once a manageable
+        expense has now become one of the largest financial commitments a person
+        can take on before age 20.
+      </p>
+      <div id="tuition-line-chart"></div>
+    </div>
 
-    <!-- Student Debt Bar Chart -->
-    <h2>Student Debt Over Time (Undergraduate vs Graduate)</h2>
-    <p>
-      With costs rising, students have turned to borrowing. The chart below
-      shows the growth of
-      <strong>undergraduate and graduate student debt</strong>
-      over the past two decades. Graduate debt is rising especially fast, driven
-      by expensive programs like law, business, and medicine.
-    </p>
-    <div id="debt-bar-chart"></div>
+    <!-- Student Debt -->
+    <div class="chart-section">
+      <h2>Student Debt Over Time (Undergraduate vs Graduate)</h2>
+      <p>
+        As tuition climbed, so did borrowing. This chart breaks down how student
+        debt has grown over time — not just in total, but split between
+        undergraduate and graduate borrowers. Undergraduate debt has steadily
+        risen, but graduate debt is increasing at an even faster pace,
+        especially as students pursue high-cost degrees like law, business, or
+        medicine. These are not just bigger numbers — they represent people
+        entering adulthood tens or even hundreds of thousands of dollars in the
+        red. For many, debt now stretches well into their 30s and beyond,
+        shaping decisions about careers, housing, and family planning.
+      </p>
+      <div id="debt-bar-chart"></div>
+    </div>
 
-    <!-- American Debt Donut -->
-    <h2>Breakdown of Average American Debt</h2>
-    <p>
-      Student loans are now a major part of household debt. This donut chart
-      shows how <strong>student debt compares</strong> to other forms like
-      mortgages, auto loans, and credit card balances — pushing the average
-      American’s total debt above $100,000.
-    </p>
-    <div id="american-debt-donut"></div>
+    <!-- Debt Donut -->
+    <div class="chart-section">
+      <h2>Breakdown of Average American Debt</h2>
+      <p>
+        Student loans are no longer just a temporary hurdle — they’ve become a
+        defining part of the American debt profile. This chart breaks down the
+        average American’s total debt by category, from mortgages to credit
+        cards. Student loans now sit alongside the biggest liabilities most
+        people carry in their lives. What makes student debt different is
+        timing. Most borrowers take it on before their first full-time job, long
+        before buying a house or a car. And unlike other forms of debt, student
+        loans often don’t come with assets — just a degree, which may or may not
+        pay off. For a growing number of people, this is the first major
+        financial commitment they make — and it lingers for decades.
+      </p>
+      <div id="american-debt-donut"></div>
+    </div>
 
-    <!-- Cost of Living Map -->
-    <h2>Cost of Living Index by State (2025)</h2>
-    <p>
-      Debt hits harder depending on where you live. This map shows the
-      <strong>cost of living index by state</strong> for 2025. In expensive
-      states like California or New York, even high post-grad salaries don’t go
-      as far, while lower-cost states may offer more room — but fewer economic
-      opportunities.
-    </p>
-    <div id="cost-of-living-map"></div>
+    <!-- Cost of Living -->
+    <div class="chart-section">
+      <h2>Cost of Living Index by State (2025)</h2>
+      <p>
+        Student debt doesn’t exist in a vacuum — it plays out differently
+        depending on where you live. This map shows the cost of living index by
+        state, highlighting how far your money actually goes after graduation.
+        In high-cost states like California, Massachusetts, or New York, even a
+        solid salary can feel tight once you factor in rent, groceries, and
+        healthcare. The same student loan payment feels heavier when everything
+        else around it costs more too. On the other hand, states with lower
+        living costs may offer more breathing room, but often come with fewer
+        job opportunities in high-paying sectors. The reality is that geography
+        now plays a major role in how manageable — or unmanageable — student
+        debt becomes.
+      </p>
+      <div id="cost-of-living-map">
+        <iframe
+          title="[Cost of Living Index by State 2025]"
+          aria-label="Map"
+          id="datawrapper-chart-FiCbz"
+          src="https://datawrapper.dwcdn.net/FiCbz/1/"
+          scrolling="no"
+          frameborder="0"
+          style="width: 0; min-width: 100% !important; border: none"
+          height="483"
+          data-external="1"
+        ></iframe>
+      </div>
+    </div>
 
-    <!-- College Enrollment Chart (scroll animated) -->
-    <h2>College Enrollment Trends Over Time</h2>
-    <p>
-      The effect of rising tuition is now starting to show up in
-      <strong>enrollment rates</strong>. For the first time in decades, college
-      enrollment is falling. This drop reflects how many are reconsidering
-      whether the cost of college is worth it at all.
-    </p>
-    <div id="college-line-chart" class="chart-scroll-trigger"></div>
+    <!-- Enrollment Trends -->
+    <div class="chart-section">
+      <h2>College Enrollment Trends Over Time</h2>
+      <p>
+        For decades, college enrollment in the U.S. climbed steadily. But that
+        growth has now stalled — and in recent years, it’s started to reverse.
+        This chart shows the slow but clear decline in the number of students
+        enrolling in college. The reasons are layered: rising tuition, fear of
+        lifelong debt, and growing skepticism about whether a degree truly
+        guarantees better opportunities. For many, the risk-reward equation of
+        higher education has changed. More students are now questioning whether
+        college is worth it — and increasingly, they’re deciding it’s not.
+      </p>
+      <div id="college-line-chart" class="chart-scroll-trigger"></div>
+    </div>
 
-    <!-- Shared script to resize Datawrapper embeds (if any remain) -->
+    <!-- Resize script for Datawrapper -->
     <script type="text/javascript">
       window.addEventListener("message", function (event) {
         if (event.data["datawrapper-height"]) {
@@ -121,13 +144,14 @@
       });
     </script>
 
-    <!-- JS Dependencies -->
+    <!-- JS Libraries -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://unpkg.com/topojson-client@3"></script>
+
+    <!-- Your Chart Scripts -->
     <script src="linechart.js"></script>
     <script src="barchart.js"></script>
     <script src="debtDonut.js"></script>
-    <script src="livingMap.js"></script>
     <script src="enrollmentChart.js"></script>
   </body>
 </html>

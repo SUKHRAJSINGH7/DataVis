@@ -1,13 +1,18 @@
 window.onload = async function () {
   const margin = { top: 40, right: 30, bottom: 50, left: 70 };
-  const width = 800 - margin.left - margin.right;
+  const width = 1100 - margin.left - margin.right;
   const height = 400 - margin.top - margin.bottom;
 
   const svg = d3
     .select("#college-line-chart")
     .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr(
+      "viewBox",
+      `0 0 ${width + margin.left + margin.right} ${
+        height + margin.top + margin.bottom
+      }`
+    )
+    .attr("preserveAspectRatio", "xMidYMid meet")
     .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
@@ -77,7 +82,6 @@ window.onload = async function () {
     .text("Enrollment");
 
   function drawChart() {
-    // Area
     svg
       .append("path")
       .datum(data)
@@ -88,7 +92,6 @@ window.onload = async function () {
       .duration(1200)
       .attr("opacity", 1);
 
-    // Line
     const path = svg
       .append("path")
       .datum(data)
@@ -107,12 +110,10 @@ window.onload = async function () {
       .ease(d3.easeCubic)
       .attr("stroke-dashoffset", 0);
 
-    // Tooltip group
     const focus = svg.append("g").style("display", "none");
 
     focus
       .append("line")
-      .attr("class", "hover-line")
       .attr("y1", 0)
       .attr("y2", height)
       .attr("stroke", "#333")
@@ -130,7 +131,6 @@ window.onload = async function () {
 
     const tooltipText = focus
       .append("text")
-      .attr("x", 60)
       .attr("y", -10)
       .attr("text-anchor", "middle")
       .attr("font-size", "13px")
@@ -138,12 +138,10 @@ window.onload = async function () {
 
     const tooltipValue = focus
       .append("text")
-      .attr("x", 60)
       .attr("y", 10)
       .attr("text-anchor", "middle")
       .attr("font-size", "13px");
 
-    // Invisible overlay to track mouse
     svg
       .append("rect")
       .attr("width", width)
@@ -155,18 +153,25 @@ window.onload = async function () {
       .on("mousemove", function (event) {
         const mouseX = d3.pointer(event, this)[0];
         const year = Math.round(x.invert(mouseX));
-
         const closest = data.reduce((a, b) =>
           Math.abs(b.year - year) < Math.abs(a.year - year) ? b : a
         );
 
-        focus.attr(
-          "transform",
-          `translate(${x(closest.year)},${y(closest.total)})`
-        );
-        focus.select("line").attr("y2", height - y(closest.total));
+        const cx = x(closest.year);
+        const cy = y(closest.total);
+
+        focus.attr("transform", `translate(${cx},${cy})`);
+        focus.select("line").attr("y2", height - cy);
         tooltipText.text(closest.year);
         tooltipValue.text(closest.total.toLocaleString());
+
+        // Smart position
+        const tooltipWidth = 120;
+        const flipLeft = cx > width - tooltipWidth;
+
+        tooltipBox.attr("x", flipLeft ? -tooltipWidth : 0);
+        tooltipText.attr("x", flipLeft ? -tooltipWidth / 2 : 60);
+        tooltipValue.attr("x", flipLeft ? -tooltipWidth / 2 : 60);
       });
   }
 

@@ -1,3 +1,115 @@
+/* Import Inter font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+/* Base Layout */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f0f2f5;
+  color: #1a1a1a;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+  line-height: 1.6;
+}
+
+/* Sticky Header */
+header {
+  position: sticky;
+  top: 0;
+  background: #f0f2f5;
+  padding: 20px 0 10px;
+  z-index: 1000;
+  border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 0;
+  color: #111;
+}
+
+header h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Section Headings */
+h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 60px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  color: #333;
+}
+
+/* Chart Section Wrapper */
+.chart-section {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 50px;
+  margin-bottom: 60px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Alternate section styling */
+.chart-section.alt {
+  background-color: #f6f8fa;
+}
+
+/* Charts */
+svg {
+  width: 100%;
+  height: auto;
+}
+
+iframe {
+  width: 100%;
+  height: auto;
+  border: none;
+}
+
+/* Tooltip (D3) */
 .tooltip {
-  font-family: Arial, sans-serif;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 8px;
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  color: #eee;
+  padding: 40px;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 80px;
+  border-top: 2px solid #444;
+}
+
+.tooltip {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 8px;
+  pointer-events: none;
+  font-size: 14px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
