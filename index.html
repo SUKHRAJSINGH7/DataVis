@@ -127,17 +127,36 @@
       <div id="college-line-chart" class="chart-scroll-trigger"></div>
     </div>
 
+    <!-- Citations -->
+    <footer id="citations" style="margin-top: 80px; padding-top: 20px; border-top: 1px solid #ccc;">
+      <h3>Citations & Related Work</h3>
+
+      <p><strong>Academic References</strong><br>
+        Li, Helen. <em>The Rising Cost of Higher Education: A Supply and Demand Analysis.</em> NY University, 2013.<br>
+        Beal, Mary, Mary O. Borg, and Harriet A. Stranahan. <em>The Onus of Student Debt: Who is Most Impacted by the Rising Cost of Higher Education?</em> International Research Journal of Applied Finance, vol. 10, no. 8, 2019, pp. 219–231.<br>
+        Bien, Ryan. <em>The Rising Cost of Higher Education: The Effects on Access, Retention, and Affordability.</em> Georgetown University, 2009.<br>
+        Renehan, Stewart. <em>Rising Tuition in Higher Education: Should We Be Concerned?</em> Visions for the Liberal Arts, vol. 1, no. 1, 2015, p. 3.<br>
+        Hirsch, Werner Zvi. <em>Analysis of the Rising Costs of Public Education.</em> U.S. Government Printing Office, 1959.
+      </p>
+
+      <p><strong>Data Sources</strong><br>
+        College Scorecard – Kaggle: <a href="https://www.kaggle.com/datasets/kaggle/college-scorecard" target="_blank">Link</a><br>
+        University Statistics – Kaggle: <a href="https://www.kaggle.com/datasets/theriley106/university-statistics" target="_blank">Link</a><br>
+        Total Student Loan Debt – EducationData.org: <a href="https://educationdata.org/total-student-loan-debt" target="_blank">Link</a><br>
+        College Enrollment Statistics – EducationData.org: <a href="https://educationdata.org/college-enrollment-statistics" target="_blank">Link</a><br>
+        Cost of Living Index by State (2025) – World Population Review: <a href="https://worldpopulationreview.com/state-rankings/cost-of-living-index-by-state" target="_blank">Link</a><br>
+        Average American Debt – Business Insider: <a href="https://www.businessinsider.com/personal-finance/credit-score/average-american-debt" target="_blank">Link</a>
+      </p>
+    </footer>
+
     <!-- Resize script for Datawrapper -->
     <script type="text/javascript">
       window.addEventListener("message", function (event) {
         if (event.data["datawrapper-height"]) {
           for (var chartId in event.data["datawrapper-height"]) {
-            var iframe = document.getElementById(
-              "datawrapper-chart-" + chartId
-            );
+            var iframe = document.getElementById("datawrapper-chart-" + chartId);
             if (iframe) {
-              iframe.style.height =
-                event.data["datawrapper-height"][chartId] + "px";
+              iframe.style.height = event.data["datawrapper-height"][chartId] + "px";
             }
           }
         }
