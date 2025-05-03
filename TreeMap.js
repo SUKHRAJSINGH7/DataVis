@@ -3,7 +3,7 @@
   const height = 600; // Taller for better label space
 
   const svg = d3
-    .select("#american-debt-donut")
+    .select("#american-debt-TreeMap")
     .append("svg")
     .attr("width", width)
     .attr("height", height)
