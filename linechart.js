@@ -52,7 +52,7 @@ d3.csv(url)
       .attr("x", width / 2)
       .attr("y", height + 50)
       .attr("text-anchor", "middle")
-      .attr("font-size", "14px")
+      .attr("font-size", "18px")
       .text("Year");
 
     svg
@@ -61,22 +61,80 @@ d3.csv(url)
       .attr("x", -height / 2)
       .attr("y", -50)
       .attr("text-anchor", "middle")
-      .attr("font-size", "14px")
+      .attr("font-size", "18px")
       .text("Tuition Amount ($)");
 
-    // Line
+    // Line generator
     const line = d3
       .line()
       .x((d) => x(d.year))
       .y((d) => y(d.all_institutions));
 
-    svg
+    // Path for line
+    const path = svg
       .append("path")
       .datum(data)
       .attr("fill", "none")
       .attr("stroke", "steelblue")
       .attr("stroke-width", 2)
       .attr("d", line);
+
+    // Animate the line drawing
+    const totalLength = path.node().getTotalLength();
+    path
+      .attr("stroke-dasharray", `${totalLength} ${totalLength}`)
+      .attr("stroke-dashoffset", totalLength)
+      .transition()
+      .duration(2000)
+      .ease(d3.easeCubic)
+      .attr("stroke-dashoffset", 0);
+
+    // Tooltip
+    const tooltip = d3
+      .select("body")
+      .append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0)
+      .style("position", "absolute")
+      .style("background", "#fff")
+      .style("border", "1px solid #ccc")
+      .style("padding", "8px")
+      .style("pointer-events", "none")
+      .style("font-size", "18px");
+
+    // Hover interaction
+    svg
+      .append("rect")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("fill", "none")
+      .attr("pointer-events", "all")
+      .on("mousemove", function (event) {
+        const [mouseX] = d3.pointer(event, this);
+        const x0 = x
+          .domain()
+          .reduce((prev, curr) =>
+            Math.abs(x(curr) - mouseX) < Math.abs(x(prev) - mouseX)
+              ? curr
+              : prev
+          );
+        const d = data.find((d) => d.year === x0);
+
+        if (d) {
+          tooltip
+            .style("opacity", 0.9)
+            .html(
+              `<strong>Year:</strong> ${
+                d.year
+              }<br><strong>Tuition:</strong> $${d.all_institutions.toLocaleString()}`
+            )
+            .style("left", event.pageX + 15 + "px")
+            .style("top", event.pageY - 30 + "px");
+        }
+      })
+      .on("mouseout", function () {
+        tooltip.transition().duration(300).style("opacity", 0);
+      });
   })
   .catch((error) => {
     console.error("Error loading or processing the CSV:", error);

@@ -94,7 +94,7 @@ iframe {
 
 /* Footer */
 footer {
-  background: #111;
+  background: ##eee;
   color: #eee;
   padding: 40px;
   text-align: center;
@@ -103,13 +103,56 @@ footer {
   border-top: 2px solid #444;
 }
 
-.tooltip {
-  position: absolute;
-  background: white;
-  border: 1px solid #ccc;
-  padding: 8px;
-  pointer-events: none;
-  font-size: 14px;
-  border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+/* Footer Citations Styling */
+#citations {
+  background-color: #1a1a1a; /* Dark background */
+  color: #f0f0f0; /* Light text */
+  padding: 60px 20px;
+  font-family: "Inter", Arial, sans-serif;
+  line-height: 1.8;
+  text-align: center;
+}
+
+#citations h3 {
+  font-size: 26px;
+  margin-bottom: 30px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+#citations p {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  text-align: left;
+  font-size: 16px;
+  color: #e0e0e0; /* Slightly lighter for better readability */
+}
+
+#citations p + p {
+  margin-top: 20px;
+}
+
+#citations strong {
+  display: block;
+  margin-top: 30px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 600;
+  border-bottom: 2px solid #555;
+  padding-bottom: 8px;
+}
+
+#citations em {
+  font-style: italic;
+  color: #cccccc;
+}
+
+#citations a {
+  color: #4ea8de;
+  text-decoration: underline;
+}
+
+#citations a:hover {
+  color: #63b3ed;
 }
