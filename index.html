@@ -1,266 +1,267 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
     <title>Exploring the Impact of Cost on Higher Education</title>
-
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-      rel="stylesheet"
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
     />
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-
-  <body>
-    <h1>Exploring the Impact of Cost on Higher Education</h1>
-    <h2>By Sukhraj Singh</h2>
-
-    <p>
-      This project explores how the rising cost of higher education in the
-      United States is affecting students and society. Using interactive data
-      visualizations, we examine tuition trends, enrollment shifts,
-      post-graduation debt, and the economic return on different degrees. The
-      goal is to tell a data-driven story about the growing burden of college
-      costs and the limited financial outcomes for many graduates.
-    </p>
-
-    <!-- Tuition Growth -->
-    <div class="chart-section">
-      <h2>Tuition Growth Over Time (All Institutions)</h2>
-      <p>
-        The cost of attending college in the United States has exploded over the
-        last 60 years. In the early 1960s, average annual tuition at all
-        institutions was just over $1,200. Today, that number has soared past
-        $27,000. This chart shows just how steep and unrelenting that climb has
-        been. While inflation plays a role, tuition has increased at a rate far
-        beyond general cost-of-living adjustments, outpacing wage growth,
-        housing, and even healthcare. For many families, affording college
-        without borrowing is no longer possible. What was once a manageable
-        expense has now become one of the largest financial commitments a person
-        can take on before age 20.
-      </p>
-      <div id="tuition-line-chart"></div>
-    </div>
-
-    <!-- Student Debt -->
-    <div class="chart-section">
-      <h2>Student Debt Over Time (Undergraduate vs Graduate)</h2>
-      <p>
-        As tuition climbed, so did borrowing. This chart breaks down how student
-        debt has grown over time — not just in total, but split between
-        undergraduate and graduate borrowers. Undergraduate debt has steadily
-        risen, but graduate debt is increasing at an even faster pace,
-        especially as students pursue high-cost degrees like law, business, or
-        medicine. These are not just bigger numbers — they represent people
-        entering adulthood tens or even hundreds of thousands of dollars in the
-        red. For many, debt now stretches well into their 30s and beyond,
-        shaping decisions about careers, housing, and family planning.
-      </p>
-      <div id="debt-bar-chart"></div>
-    </div>
-
-    <!-- Debt Donut -->
-    <div class="chart-section">
-      <h2>Breakdown of Average American Debt</h2>
-      <p>
-        Student loans are no longer just a temporary hurdle — they’ve become a
-        defining part of the American debt profile. This chart breaks down the
-        average American’s total debt by category, from mortgages to credit
-        cards. Student loans now sit alongside the biggest liabilities most
-        people carry in their lives. What makes student debt different is
-        timing. Most borrowers take it on before their first full-time job, long
-        before buying a house or a car. And unlike other forms of debt, student
-        loans often don’t come with assets — just a degree, which may or may not
-        pay off. For a growing number of people, this is the first major
-        financial commitment they make — and it lingers for decades.
-      </p>
-      <div id="american-debt-donut"></div>
-    </div>
-
-    <!-- Cost of Living -->
-    <div class="chart-section">
-      <h2>Cost of Living Index by State (2025)</h2>
-      <p>
-        Student debt doesn’t exist in a vacuum — it plays out differently
-        depending on where you live. This map shows the cost of living index by
-        state, highlighting how far your money actually goes after graduation.
-        In high-cost states like California, Massachusetts, or New York, even a
-        solid salary can feel tight once you factor in rent, groceries, and
-        healthcare. The same student loan payment feels heavier when everything
-        else around it costs more too. On the other hand, states with lower
-        living costs may offer more breathing room, but often come with fewer
-        job opportunities in high-paying sectors. The reality is that geography
-        now plays a major role in how manageable — or unmanageable — student
-        debt becomes.
-      </p>
-      <div id="cost-of-living-map">
-        <iframe
-          title="[Cost of Living Index by State 2025]"
-          aria-label="Map"
-          id="datawrapper-chart-FiCbz"
-          src="https://datawrapper.dwcdn.net/FiCbz/1/"
-          scrolling="no"
-          frameborder="0"
-          style="width: 0; min-width: 100% !important; border: none"
-          height="483"
-          data-external="1"
-        ></iframe>
-      </div>
-    </div>
-
-    <!-- Enrollment Trends -->
-    <div class="chart-section">
-      <h2>College Enrollment Trends Over Time</h2>
-      <p>
-        For decades, college enrollment in the U.S. climbed steadily. But that
-        growth has now stalled — and in recent years, it’s started to reverse.
-        This chart shows the slow but clear decline in the number of students
-        enrolling in college. The reasons are layered: rising tuition, fear of
-        lifelong debt, and growing skepticism about whether a degree truly
-        guarantees better opportunities. For many, the risk-reward equation of
-        higher education has changed. More students are now questioning whether
-        college is worth it — and increasingly, they’re deciding it’s not.
-      </p>
-      <div id="college-line-chart" class="chart-scroll-trigger"></div>
-    </div>
-
-    <!-- Homeownership by Age Group -->
-    <div class="chart-section">
-      <h2>Homeownership Rate by Age Group (2025)</h2>
-      <p>
-        Student debt impacts financial independence and long-term stability.
-        This chart breaks down
-        <strong>homeownership rates by age group</strong> as of 2025. Younger
-        Americans—especially those under 35—are far less likely to own a home.
-        Rising tuition and student loan burdens delay major life decisions like
-        home buying, further widening generational wealth gaps.
-      </p>
-      <div id="homeownership-chart">
-        <iframe
-          title="HomeOwnership Rate by Age group"
-          aria-label="Pie Chart"
-          id="datawrapper-chart-U5KAI"
-          src="https://datawrapper.dwcdn.net/U5KAI/1/"
-          scrolling="no"
-          frameborder="0"
-          style="width: 0; min-width: 100% !important; border: none"
-          height="528"
-          data-external="1"
-        ></iframe>
-      </div>
-    </div>
-
-    <!-- Citations -->
-    <footer
-      id="citations"
-      style="margin-top: 80px; padding-top: 20px; border-top: 1px solid #ccc"
-    >
-      <h3>Citations & Related Work</h3>
-
-      <p>
-        <strong>Academic References</strong><br />
-        Li, Helen.
-        <em
-          >The Rising Cost of Higher Education: A Supply and Demand
-          Analysis.</em
-        >
-        NY University, 2013.<br />
-        Beal, Mary, Mary O. Borg, and Harriet A. Stranahan.
-        <em
-          >The Onus of Student Debt: Who is Most Impacted by the Rising Cost of
-          Higher Education?</em
-        >
-        International Research Journal of Applied Finance, vol. 10, no. 8, 2019,
-        pp. 219–231.<br />
-        Bien, Ryan.
-        <em
-          >The Rising Cost of Higher Education: The Effects on Access,
-          Retention, and Affordability.</em
-        >
-        Georgetown University, 2009.<br />
-        Renehan, Stewart.
-        <em>Rising Tuition in Higher Education: Should We Be Concerned?</em>
-        Visions for the Liberal Arts, vol. 1, no. 1, 2015, p. 3.<br />
-        Hirsch, Werner Zvi.
-        <em>Analysis of the Rising Costs of Public Education.</em> U.S.
-        Government Printing Office, 1959.
-      </p>
-
-      <p>
-        <strong>Data Sources</strong><br />
-        College Scorecard – Kaggle:
-        <a
-          href="https://www.kaggle.com/datasets/kaggle/college-scorecard"
-          target="_blank"
-          >Link</a
-        ><br />
-        University Statistics – Kaggle:
-        <a
-          href="https://www.kaggle.com/datasets/theriley106/university-statistics"
-          target="_blank"
-          >Link</a
-        ><br />
-        Total Student Loan Debt – EducationData.org:
-        <a
-          href="https://educationdata.org/total-student-loan-debt"
-          target="_blank"
-          >Link</a
-        ><br />
-        College Enrollment Statistics – EducationData.org:
-        <a
-          href="https://educationdata.org/college-enrollment-statistics"
-          target="_blank"
-          >Link</a
-        ><br />
-        Cost of Living Index by State (2025) – World Population Review:
-        <a
-          href="https://worldpopulationreview.com/state-rankings/cost-of-living-index-by-state"
-          target="_blank"
-          >Link</a
-        ><br />
-        Average American Debt – Business Insider:
-        <a
-          href="https://www.businessinsider.com/personal-finance/credit-score/average-american-debt"
-          target="_blank"
-          >Link</a
-        ><br />
-        Homeownership Rates by Age Group – U.S. Census Bureau:
-        <a
-          href="https://www.census.gov/housing/hvs/data/detailed_tables.html"
-          target="_blank"
-          >Link</a
-        >
-      </p>
-    </footer>
-
-    <!-- Resize script for Datawrapper -->
-    <script type="text/javascript">
-      window.addEventListener("message", function (event) {
-        if (event.data["datawrapper-height"]) {
-          for (var chartId in event.data["datawrapper-height"]) {
-            var iframe = document.getElementById(
-              "datawrapper-chart-" + chartId
-            );
-            if (iframe) {
-              iframe.style.height =
-                event.data["datawrapper-height"][chartId] + "px";
-            }
-          }
-        }
-      });
-    </script>
-
-    <!-- JS Libraries -->
+    <link rel="stylesheet" href="assets/css/main.css" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://unpkg.com/topojson-client@3"></script>
+  </head>
+  <body class="is-preload">
+    <!-- Sidebar -->
+    <section id="header">
+      <header>
+        <span class="image avatar"
+          ><img src="images/avatar.jpg" alt="Avatar"
+        /></span>
+        <h1 id="logo"><a href="#">Sukhraj Singh</a></h1>
+        <p>Data Storytelling Project<br />Cost of Higher Education</p>
+      </header>
+      <nav id="nav">
+        <ul>
+          <li><a href="#intro" class="active">Overview</a></li>
+          <li><a href="#tuition">Tuition Growth</a></li>
+          <li><a href="#debt">Student Debt</a></li>
+          <li><a href="#breakdown">Debt Breakdown</a></li>
+          <li><a href="#living">Cost of Living</a></li>
+          <li><a href="#enrollment">Enrollment</a></li>
+          <li><a href="#homeownership">Homeownership</a></li>
+          <li><a href="#citations">Citations</a></li>
+        </ul>
+      </nav>
+      <footer>
+        <ul class="icons">
+          <li>
+            <a href="#" class="icon brands fa-github"
+              ><span class="label">GitHub</span></a
+            >
+          </li>
+        </ul>
+      </footer>
+    </section>
 
-    <!-- Your Chart Scripts -->
+    <div id="wrapper">
+      <!-- Intro -->
+      <section id="intro" class="chart-section">
+        <div class="image main" data-position="center">
+          <img src="images/banner.jpg" alt="" />
+        </div>
+        <div class="container">
+          <header class="major">
+            <h2>Exploring the Impact of Cost on Higher Education</h2>
+            <p>By Sukhraj Singh</p>
+          </header>
+          <p>
+            This project explores how the rising cost of higher education in the
+            United States is affecting students and society. Using interactive
+            data visualizations, we examine tuition trends, enrollment shifts,
+            post-graduation debt, and the economic return on different degrees.
+          </p>
+        </div>
+      </section>
+
+      <!-- Tuition Growth -->
+      <section id="tuition" class="chart-section">
+        <div class="container">
+          <h3>Tuition Growth Over Time</h3>
+          <p>
+            The cost of attending college in the United States has exploded over
+            the last 60 years. In the early 1960s, average annual tuition at all
+            institutions was just over $1,200. Today, that number has soared
+            past $27,000. This chart shows just how steep and unrelenting that
+            climb has been. While inflation plays a role, tuition has increased
+            at a rate far beyond general cost-of-living adjustments, outpacing
+            wage growth, housing, and even healthcare. For many families,
+            affording college without borrowing is no longer possible. What was
+            once a manageable expense has now become one of the largest
+            financial commitments a person can take on before age 20.
+          </p>
+          <div id="tuition-line-chart" class="chart-box"></div>
+        </div>
+      </section>
+
+      <!-- Student Debt -->
+      <section id="debt" class="chart-section">
+        <div class="container">
+          <h3>Student Debt Over Time (Undergraduate vs Graduate)</h3>
+          <p>
+            As tuition climbed, so did borrowing. This chart breaks down how
+            student debt has grown over time — not just in total, but split
+            between undergraduate and graduate borrowers. Undergraduate debt has
+            steadily risen, but graduate debt is increasing at an even faster
+            pace, especially as students pursue high-cost degrees like law,
+            business, or medicine. These are not just bigger numbers — they
+            represent people entering adulthood tens or even hundreds of
+            thousands of dollars in the red. For many, debt now stretches well
+            into their 30s and beyond, shaping decisions about careers, housing,
+            and family planning.
+          </p>
+          <div id="debt-bar-chart" class="chart-box"></div>
+        </div>
+      </section>
+
+      <!-- Debt Breakdown -->
+      <section id="breakdown" class="chart-section">
+        <div class="container">
+          <h3>Breakdown of Average American Debt</h3>
+          <p>
+            Student loans are no longer just a temporary hurdle — they’ve become
+            a defining part of the American debt profile. This chart breaks down
+            the average American’s total debt by category, from mortgages to
+            credit cards. Student loans now sit alongside the biggest
+            liabilities most people carry in their lives. What makes student
+            debt different is timing. Most borrowers take it on before their
+            first full-time job, long before buying a house or a car. And unlike
+            other forms of debt, student loans often don’t come with assets —
+            just a degree, which may or may not pay off. For a growing number of
+            people, this is the first major financial commitment they make — and
+            it lingers for decades.
+          </p>
+          <div id="american-debt-donut" class="chart-box"></div>
+        </div>
+      </section>
+
+      <!-- Cost of Living -->
+      <section id="living" class="chart-section">
+        <div class="container">
+          <h3>Cost of Living Index by State (2025)</h3>
+          <p>
+            Student debt doesn’t exist in a vacuum — it plays out differently
+            depending on where you live. This map shows the cost of living index
+            by state, highlighting how far your money actually goes after
+            graduation. In high-cost states like California, Massachusetts, or
+            New York, even a solid salary can feel tight once you factor in
+            rent, groceries, and healthcare. The same student loan payment feels
+            heavier when everything else around it costs more too. On the other
+            hand, states with lower living costs may offer more breathing room,
+            but often come with fewer job opportunities in high-paying sectors.
+            The reality is that geography now plays a major role in how
+            manageable — or unmanageable — student debt becomes..
+          </p>
+          <iframe
+            title="[Cost of Living Index by State 2025]"
+            aria-label="Map"
+            id="datawrapper-chart-FiCbz"
+            src="https://datawrapper.dwcdn.net/FiCbz/1/"
+            scrolling="no"
+            frameborder="0"
+            style="width: 100%; border: none"
+            height="763"
+            data-external="1"
+          ></iframe>
+        </div>
+      </section>
+
+      <!-- Enrollment -->
+      <section id="enrollment" class="chart-section">
+        <div class="container">
+          <h3>College Enrollment Trends Over Time</h3>
+          <p>
+            For decades, college enrollment in the U.S. climbed steadily. But
+            that growth has now stalled — and in recent years, it’s started to
+            reverse. This chart shows the slow but clear decline in the number
+            of students enrolling in college. The reasons are layered: rising
+            tuition, fear of lifelong debt, and growing skepticism about whether
+            a degree truly guarantees better opportunities. For many, the
+            risk-reward equation of higher education has changed. More students
+            are now questioning whether college is worth it — and increasingly,
+            they’re deciding it’s not.
+          </p>
+          <div id="college-line-chart" class="chart-box"></div>
+        </div>
+      </section>
+
+      <!-- Homeownership -->
+      <section id="homeownership" class="chart-section">
+        <div class="container">
+          <h3>Homeownership Rate by Age Group (2025)</h3>
+          <p>
+            Student debt impacts financial independence and long-term stability.
+            This chart breaks down homeownership rates by age group as of 2025.
+            Younger Americans—especially those under 35—are significantly less
+            likely to own homes. The financial strain from rising tuition costs
+            and student loans delays key milestones like buying a house,
+            starting a family, or saving for retirement. These delays aren't
+            just temporary setbacks—they contribute to long-term disparities in
+            wealth and security between generations, with younger adults falling
+            further behind.
+          </p>
+          <iframe
+            title="HomeOwnership Rate by Age group"
+            aria-label="Pie Chart"
+            id="datawrapper-chart-U5KAI"
+            src="https://datawrapper.dwcdn.net/U5KAI/1/"
+            scrolling="no"
+            frameborder="0"
+            style="width: 100%; border: none"
+            height="768"
+            data-external="1"
+          ></iframe>
+        </div>
+      </section>
+
+      <!-- Citations -->
+      <section id="citations" class="chart-section">
+        <div class="container">
+          <h3>Citations & Data Sources</h3>
+          <strong>Academic References</strong>
+          <ul>
+            <li>Li, Helen. <em>The Rising Cost of Higher Education...</em></li>
+            <li>Beal, Mary, et al. <em>The Onus of Student Debt...</em></li>
+            <li>Bien, Ryan. <em>The Rising Cost of Higher Education...</em></li>
+            <li>
+              Renehan, Stewart. <em>Rising Tuition in Higher Education...</em>
+            </li>
+            <li>
+              Hirsch, Werner Zvi. <em>Analysis of the Rising Costs...</em>
+            </li>
+          </ul>
+
+          <strong>Data Sources</strong>
+          <ul>
+            <li>
+              <a
+                href="https://www.kaggle.com/datasets/kaggle/college-scorecard"
+                target="_blank"
+                >College Scorecard – Kaggle</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://educationdata.org/total-student-loan-debt"
+                target="_blank"
+                >Student Loan Debt – EducationData.org</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.census.gov/housing/hvs/data/detailed_tables.html"
+                target="_blank"
+                >Homeownership Rate – U.S. Census Bureau</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <section id="footer">
+      <div class="container">
+        <ul class="copyright">
+          <li>&copy; 2025 Sukhraj Singh. All rights reserved.</li>
+          <li>Template by <a href="https://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Your custom chart JS files -->
     <script src="linechart.js"></script>
-    <script src="barchart.js"></script>
     <script src="TreeMap.js"></script>
+    <script src="barchart.js"></script>
     <script src="enrollmentChart.js"></script>
   </body>
 </html>
