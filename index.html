@@ -206,7 +206,7 @@
       <!-- Citations -->
       <section id="citations" class="chart-section">
         <div class="container">
-          <h3>Citations & Data Sources</h3>
+          <h3>Citations</h3>
           <strong>Academic References</strong>
           <ul>
             <li>Li, Helen. <em>The Rising Cost of Higher Education...</em></li>
@@ -263,5 +263,28 @@
     <script src="TreeMap.js"></script>
     <script src="barchart.js"></script>
     <script src="enrollmentChart.js"></script>
+
+    <script>
+      const sections = document.querySelectorAll("section.chart-section");
+      const navLinks = document.querySelectorAll("#nav ul li a");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100;
+          if (scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
