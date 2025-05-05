@@ -1,0 +1,66 @@
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+/* General section style */
+.chart-section {
+  padding: 4em 2em;
+  margin-bottom: 3em;
+}
+
+/* Canvas wrapper inside each section */
+.canvas-wrapper {
+  background-color: #ffffff;
+  padding: 2em;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Chart display box */
+.chart-box {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding: 2em;
+  margin-top: 2em;
+  box-shadow: inset 0 0 0 1px #ccc;
+  min-height: 300px;
+}
+
+/* Section colors */
+#intro {
+  background-color: #e8f5e9;
+}
+
+#tuition {
+  background-color: #fffde7;
+}
+
+#debt {
+  background-color: #fce4ec;
+}
+
+#breakdown {
+  background-color: #e3f2fd;
+}
+
+#living {
+  background-color: #f3e5f5;
+}
+
+#enrollment {
+  background-color: #ede7f6;
+}
+
+#homeownership {
+  background-color: #e0f7fa;
+}
+
+#citations {
+  background-color: #263238;
+  color: #fff;
+}
+
+#citations a {
+  color: #80d8ff;
+}
